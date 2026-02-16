@@ -1,0 +1,27 @@
+Test file for LLM Slop Checker
+
+This file contains various elements that should be highlighted as LLM-generated slop.
+
+1. Emojis:
+   🚀 Sparkles ✨
+   Thinking 🤔
+   Robot 🤖
+
+2. Suspicious Symbols:
+   En-dash: –
+   Em-dash: —
+   Smart quotes: “Hello” and ‘World’
+   Ellipsis: …
+
+3. Suspicious Words:
+   It is crucial to leverage the power of AI.
+   We must spearhead a new initiative.
+   This project is a testament to our meticulous planning.
+   Let's delve deeper into the realm of possibilities.
+   The tapestry of code underscores the importance of quality.
+   This is paramount.
+
+Open this file in the Debug Extension Host window (F5) to verify functionality.
+You should see yellow highlights on the items listed above.
+The status bar should show a count of all found items.
+Clicking the status bar item should list all issues.

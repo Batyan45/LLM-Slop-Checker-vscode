@@ -1,0 +1,95 @@
+{
+    "name": "llm-slop-checker",
+    "displayName": "LLM Slop Checker",
+    "description": "Highlights AI-generated slop in your code.",
+    "version": "0.0.1",
+    "publisher": "batyan-soft",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Batyan45/llm-slop-checker"
+    },
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "LLM Slop Checker",
+            "properties": {
+                "llmSlopChecker.enable": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/Disable the LLM Slop Checker."
+                },
+                "llmSlopChecker.checkEmojis": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Highlight emojis in the code."
+                },
+                "llmSlopChecker.suspiciousSymbols": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "—",
+                        "–",
+                        "“",
+                        "”",
+                        "‘",
+                        "’",
+                        "…"
+                    ],
+                    "description": "List of suspicious symbols to highlight."
+                },
+                "llmSlopChecker.suspiciousWords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "delve",
+                        "tapestry",
+                        "leverage",
+                        "spearhead",
+                        "realm",
+                        "testament",
+                        "underscores",
+                        "paramount",
+                        "crucial",
+                        "meticulous"
+                    ],
+                    "description": "List of suspicious words to highlight."
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "llmSlopChecker.showIssues",
+                "title": "LLM Slop: Show Issues"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts",
+        "build-vsix": "vsce package",
+        "version": "npm version --no-git-tag-version"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/vscode": "^1.74.0",
+        "eslint": "^9.39.2",
+        "globals": "^17.3.0",
+        "typescript": "^5.0.0",
+        "typescript-eslint": "^8.55.0"
+    }
+}

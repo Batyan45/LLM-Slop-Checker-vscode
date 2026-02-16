@@ -2,8 +2,6 @@
 
 ![Icon](images/icon.png)
 
-**Slop:** *noun.* Unwanted, low-quality, or generated content that clutters your codebase.
-
 **LLM Slop Checker** is a VS Code extension designed to help you spot and highlight text artifacts that are commonly associated with AI-generated code (LLM slop). It scans your files for suspicious symbols, "AI-favored" vocabulary, and emojis that might indicate copy-pasted or machine-generated content without proper review.
 
 ## Features

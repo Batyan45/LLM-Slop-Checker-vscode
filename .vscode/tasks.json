@@ -38,6 +38,16 @@
                 "$tsc"
             ]
         },
+                {
+            "label": "Open VSX publish",
+            "type": "shell",
+            "command": "npx --yes ovsx publish -p ${input:openVsxToken}",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
         {
             "label": "VSCODE publish",
             "type": "shell",
@@ -70,6 +80,12 @@
                 "major"
             ],
             "default": "patch"
+        },
+        {
+            "id": "openVsxToken",
+            "type": "promptString",
+            "description": "Open VSX access token (OVSX_PAT)",
+            "password": true
         }
     ]
 }

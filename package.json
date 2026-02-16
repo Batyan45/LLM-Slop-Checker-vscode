@@ -7,7 +7,7 @@
     "publisher": "batyan-soft",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Batyan45/llm-slop-checker"
+        "url": "https://github.com/Batyan45/LLM-Slop-Checker-vscode"
     },
     "engines": {
         "vscode": "^1.74.0"

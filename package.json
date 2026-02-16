@@ -2,7 +2,8 @@
     "name": "llm-slop-checker",
     "displayName": "LLM Slop Checker",
     "description": "Highlights AI-generated slop in your code.",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "icon": "images/icon.png",
     "publisher": "batyan-soft",
     "repository": {
         "type": "git",
@@ -32,40 +33,35 @@
                     "default": true,
                     "description": "Highlight emojis in the code."
                 },
-                "llmSlopChecker.suspiciousSymbols": {
+                "llmSlopChecker.symbolReplacements": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Symbol and replacement in format 'symbol:replacement'. Example: '“:\"' or '—:' to remove default."
                     },
-                    "default": [
-                        "—",
-                        "–",
-                        "“",
-                        "”",
-                        "‘",
-                        "’",
-                        "…"
-                    ],
-                    "description": "List of suspicious symbols to highlight."
+                    "default": [],
+                    "description": "List of suspicious symbols and their replacements. Format: \"symbol:replacement\". Extends defaults. Use empty replacement (e.g. \"—:\") to disable a default symbol."
                 },
                 "llmSlopChecker.suspiciousWords": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "default": [
-                        "delve",
-                        "tapestry",
-                        "leverage",
-                        "spearhead",
-                        "realm",
-                        "testament",
-                        "underscores",
-                        "paramount",
-                        "crucial",
-                        "meticulous"
-                    ],
-                    "description": "List of suspicious words to highlight."
+                    "default": [],
+                    "description": "List of suspicious words to highlight. Extends defaults. Prefix with \"-\" to remove a word from defaults. Examples: \"delve\", \"ensure\", \"-tapestry\"."
+                },
+                "llmSlopChecker.emojiExceptions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "List of emojis to ignore/allow. Extends defaults. Prefix with \"-\" to remove an emoji from defaults. Examples: \"🚀\", \"✨\", \"-⚠️\"."
+                },
+                "llmSlopChecker.enableProblemsIntegration": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable integration with the Problems view (Diagnostics) to show issues across the workspace."
                 }
             }
         },
@@ -73,6 +69,10 @@
             {
                 "command": "llmSlopChecker.showIssues",
                 "title": "LLM Slop: Show Issues"
+            },
+            {
+                "command": "llmSlopChecker.fixIssues",
+                "title": "LLM Slop: Fix Symbols"
             }
         ]
     },

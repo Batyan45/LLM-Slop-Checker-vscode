@@ -2,6 +2,11 @@
 
 All notable changes to the "llm-slop-checker" extension will be documented in this file.
 
+## [1.0.0] - 2026-07-07
+
+### Updated
+- Updated icon.
+
 ## [0.0.3] - 2026-02-16
 
 ### Improved
